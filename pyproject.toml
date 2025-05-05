@@ -1,0 +1,11 @@
+[project]
+name = "bilibili-mcp-server"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "bilibili-api-python>=17.1.4",
+    "fastmcp>=2.2.7",
+    "pre-commit>=4.2.0",
+]
