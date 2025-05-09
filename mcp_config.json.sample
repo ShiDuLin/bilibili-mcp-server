@@ -4,9 +4,9 @@
       "command": "uv",
       "args": [
         "--directory",
-        "C:\\user\\Desktop\\bilibili-mcp-server",
+        "C:\\user\\Desktop\\bilibili-mcp-server\\src",
         "run",
-        "bilibili_mcp_server.py"
+        "main.py"
       ]
     }
   }

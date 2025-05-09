@@ -1,0 +1,67 @@
+---
+description: 
+globs: *.py
+alwaysApply: false
+---
+# FastMCP Development Guide
+
+## Architecture Overview
+FastMCP is a Pythonic framework for building Model Context Protocol (MCP) servers and clients. This framework enables you to expose functionality to LLMs through tools, resources, and prompts.
+
+## Core Components
+
+### Tools
+Tools are Python functions that LLMs can execute:
+
+```python
+@mcp.tool()
+def search_database(query: str, limit: int = 10) -> list:
+    """Search the database with the provided query."""
+    # Implementation...
+```
+
+Use complete type annotations and clear docstrings for all tools.
+
+### Resources
+Resources provide data to the LLM's context:
+
+```python
+@mcp.resource()
+def get_user_profile(user_id: str) -> dict:
+    """Retrieve user profile information."""
+    # Implementation...
+```
+
+### Prompts
+Define reusable prompt templates for LLM interactions:
+
+```python
+@mcp.prompt()
+def instruction_template() -> str:
+    """Return the instruction template for the assistant."""
+    return """
+    You are a helpful assistant that provides information about our products.
+    """
+```
+
+## Best Practices
+
+1. **Type Annotations**: Always use proper type hints for parameters and return values
+2. **Documentation**: Include clear docstrings for all components
+3. **Error Handling**: Implement robust error management
+4. **Async Support**: Use async functions for I/O-bound operations
+5. **Modular Design**: Group related functionality together
+
+## Project Structure
+Organize your project with logical separation of concerns:
+- `src/tools/` - Tool implementations
+- `src/resources/` - Resource implementations
+- `src/prompts/` - Prompt templates
+- `src/core/` - Core functionality
+
+## Testing
+Test all components thoroughly to ensure reliable operation.
+
+## Development Language
+
+-The Python version is 3.12

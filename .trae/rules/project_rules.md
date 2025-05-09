@@ -1,0 +1,1 @@
+- 请严格按照FaseMcp文档输出代码，不要自行发挥给出框架不存在的方法，当设计不出来时，可参考文档集fastmcp_doc、fastmcp_readme文档输出代码
