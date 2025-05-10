@@ -273,7 +273,7 @@ async def search_games(keyword: str) -> dict:
 
 @tool
 async def search_mangasearch_manga(
-    keyword: str, page_num: int = 1, page_size: int = 9, credential: Credential = None
+    keyword: str, page_num: int = 1, page_size: int = 9, credential_dict: dict | None = None
 ) -> dict:
     """
     搜索bilibili漫画特用函数
@@ -285,11 +285,14 @@ async def search_mangasearch_manga(
 
         page_size (int): 每一页的数据大小. Defaults to 9.
 
-        credential (Credential): 凭据类. Defaults to None.
+        credential_dict (dict | None): 凭据信息字典，包含 sessdata, bili_jct, buvid3 等. Defaults to None.
 
     Returns:
         dict: 包含搜索结果的字典。
     """
+    credential = None
+    if credential_dict:
+        credential = Credential(**credential_dict)
     return await search.search_manga(keyword, page_num, page_size, credential)
 
 
